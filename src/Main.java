@@ -11,5 +11,6 @@ public class Main {
         System.out.println("Enter name: ");
         System.out.println("Nurkamil Kamchiev");
         System.out.println("Aiturgan");
+        System.out.println();
     }
 }
