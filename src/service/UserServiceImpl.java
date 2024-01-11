@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
 
 
     @Override
-    public String updateUserById(User id, User user) {
+    public String updateUserById(Long id, User user) {
         try {
             daoUser.updateUserById(id, user);
         } catch (Exception e) {
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String deleteUserById(User id) {
+    public String deleteUserById(Long id) {
         try {
             daoUser.deleteUserById(id);
         } catch (Exception e) {

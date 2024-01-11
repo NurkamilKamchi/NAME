@@ -14,7 +14,7 @@ public class AnnouncmentServiceImpl implements AnnouncmenService{
 
     @Override
     public void add(Announcement announcement) {
-        daoAnnouncement.add();
+        daoAnnouncement.add(announcement);
     }
 
     @Override

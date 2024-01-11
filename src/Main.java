@@ -1,6 +1,10 @@
 import dao.DaoAnnouncementImpl;
+import dao.DaoUserImpl;
 import database.Database;
+import enumm.Role;
 import models.Announcement;
+import models.User;
+import service.UserServiceImpl;
 
 import java.util.Scanner;
 
@@ -9,14 +13,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Database dataBase = new Database();
+        UserServiceImpl userService = new UserServiceImpl(new DaoUserImpl(dataBase));
+
         Scanner scanner =new Scanner(System.in);
 
         DaoAnnouncementImpl daoAnnouncement = new DaoAnnouncementImpl(dataBase);
         while (true){
             System.out.println("""
-                    1.add
+                    1.add 
                     2.remove
                     3.getAll
+                    4.Add user.
+                    5.Get all users.
+                    6.Update user.
+                    7.Delete user.
+                    
                     """);
             switch (scanner.nextLine()){
                 case "1"-> {
@@ -50,6 +61,17 @@ public class Main {
                 }
                 case "3"->{
                     System.out.println(daoAnnouncement.getAll());
+                }
+                case "4"->{
+                    User user =new User("Nurkamil",1L, Role.USER,"n@gmail.com","1234");
+                    System.out.println(userService.addUser(user));
+                }case "5"->{
+                    System.out.println(userService.getAllUsers());
+                }case "6"->{
+                    User user = new User("Myrzaiym",2L,Role.USER,"m@gmail.com","4321");
+                    System.out.println(userService.updateUserById(1L, user));
+                }case "7"->{
+                    System.out.println(userService.deleteUserById(1L));
                 }
             }
         }
