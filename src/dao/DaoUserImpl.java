@@ -31,7 +31,6 @@ public class DaoUserImpl implements DaoUserInterface {
                 user1.setEmail(user.getEmail());
                 user1.setPassword(user.getPassword());
                 user1.setRole(user.getRole());
-                user1.setId(user.getId());
             }else throw new RuntimeException("Not succes!!!");
         }
         return "Success updated!!!";
@@ -44,6 +43,6 @@ public class DaoUserImpl implements DaoUserInterface {
                 getAllUsers().remove(user);
             }else throw new RuntimeException("Not success!");
         }
-        return "Suuccess deleted!";
+        return "Success deleted!";
     }
 }
