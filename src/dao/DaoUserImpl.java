@@ -24,7 +24,7 @@ public class DaoUserImpl implements DaoUserInterface {
     }
 
     @Override
-    public String updateUserById(User id, User user) {
+    public String updateUserById(Long id, User user) {
         for (User user1 : database.users) {
             if (id.equals(user1.getId())){
                 user1.setName(user.getName());
@@ -37,7 +37,7 @@ public class DaoUserImpl implements DaoUserInterface {
     }
 
     @Override
-    public String deleteUserById(User id) {
+    public String deleteUserById(Long id) {
         for (User user : database.users) {
             if (id.equals(user.getId())){
                 getAllUsers().remove(user);
