@@ -17,7 +17,7 @@ public class DaoAnnouncementImpl implements DaoInterface {
     @Override
     public String add(Announcement announcement) {
         dataBase.announcementList.add(announcement);
-        return "Successfully added!";
+        return "Successfully added! ";
 
     }
 
