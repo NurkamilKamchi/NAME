@@ -5,7 +5,7 @@ import models.Announcement;
 import java.util.List;
 
 public interface DaoInterface {
-    void add ();
+    String add (Announcement announcement);
     String removeById(Long Id);
     List<Announcement> getAll();
 }
