@@ -29,6 +29,8 @@ public class DaoAnnouncementImpl implements DaoInterface {
 
     @Override
     public List<Announcement> getAll() {
+        System.out.println();
         return dataBase.announcementList;
+
     }
 }
