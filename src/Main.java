@@ -1,5 +1,6 @@
 import dao.DaoAnnouncementImpl;
 import database.Database;
+import models.Announcement;
 
 import java.util.Scanner;
 
@@ -19,7 +20,28 @@ public class Main {
                     """);
             switch (scanner.nextLine()){
                 case "1"-> {
-                    daoAnnouncement.add();
+                    Scanner scanner3 = new Scanner(System.in);
+                    Scanner scanner1 = new Scanner(System.in);
+                    Scanner scanner2 = new Scanner(System.in);
+
+                    Announcement announcement = new Announcement();
+                    System.out.println("Enter id of product: ");
+                    Long id = scanner1.nextLong();
+                    announcement.setId(id);
+                    System.out.println("Enter name of product: ");
+                    String name = scanner3.nextLine();
+                    announcement.setName(name);
+                    System.out.println("Enter description of product: ");
+                    String desc = scanner3.nextLine();
+                    announcement.setDescription(desc);
+                    System.out.println("Enter price of product: ");
+                    double price = scanner2.nextDouble();
+                    announcement.setPrice(price);
+                    System.out.println("Enter name of owner: ");
+                    String nameOwner = scanner3.nextLine();
+                    announcement.setOwner(nameOwner);
+
+                    daoAnnouncement.add(announcement);
                 }
                 case "2"-> {
                     System.out.println("Enter id of product for remove: ");
