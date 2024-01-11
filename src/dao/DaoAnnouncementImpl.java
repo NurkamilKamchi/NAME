@@ -24,7 +24,7 @@ public class DaoAnnouncementImpl implements DaoInterface {
     @Override
     public String removeById(Long Id) {
         dataBase.announcementList.removeIf(announcement -> announcement.getId().equals(Id));
-        return "Successfully";
+        return "Successfully" ;
     }
 
     @Override
