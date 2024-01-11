@@ -14,12 +14,13 @@ public class AnnouncmentServiceImpl implements AnnouncmenService{
 
     @Override
     public void add(Announcement announcement) {
-        daoAnnouncement.add(announcement);
+        daoAnnouncement.add();
     }
 
     @Override
     public String removeById(Long Id) {
-
+        daoAnnouncement.removeById(Id);
+        return "Success deleted!";
     }
 
     @Override
